@@ -86,7 +86,7 @@
             <para PARENT="text"/>
             <ITEXT CH="Multibolid"/>
             <para PARENT="nadpis-3"/>
-            <ITEXT CH="The multibolid part contains the list of multi-station bolids. The match is detected by the time of event and length of the record. Every multi-station event is marked with the unique id for simple access with MLABvo tools. It is useful for choosing interesting bolides for future processing. In web interface are links to easy access to the corresponding snapshots.                            "/>
+            <ITEXT CH="The multibolid part contains the list of multi-station bolids. The match is detected by the time of event and length of the record. Every multi-station event is marked with the unique id for simple access with MLABvo tools. It is useful for choosing interesting bolides for future processing. In web interface are links to easy access to the corresponding snapshots.                                                                                   "/>
             <para PARENT="text"/>
             <para PARENT="nadpis-3"/>
             <ITEXT CH="space.astro.cz"/>
@@ -136,7 +136,7 @@
             <para PARENT="text"/>
             <ITEXT CH="Meteor events"/>
             <para PARENT="nadpis-3"/>
-            <ITEXT CH="When a meteor is detected, the station makes TCP/IP request with some fundamental properties of the event. This stream is used for real-time visualization on the map.            "/>
+            <ITEXT CH="When a meteor is detected, the station makes TCP/IP request with some fundamental properties of the event. This stream is used for real-time visualization on the map.                                                                                        "/>
             <para PARENT="text"/>
             <ITEXT CH="Standardized data access"/>
             <para PARENT="nadpis-3"/>
@@ -170,7 +170,7 @@
             <trail ALIGN="1" LINESP="18"/>
             <PageItemAttributes/>
         </PAGEOBJECT>
-        <PAGEOBJECT OwnPage="0" PTYPE="4" XPOS="139.5" YPOS="173.551378446115" WIDTH="1603.5" HEIGHT="63.9097744360902" RADRECT="0" FRTYPE="0" CLIPEDIT="1" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 1603.5 0 1603.5 0 1603.5 0 1603.5 0 1603.5 63.9098 1603.5 63.9098 1603.5 63.9098 1603.5 63.9098 0 63.9098 0 63.9098 0 63.9098 0 63.9098 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 1603.5 0 1603.5 0 1603.5 0 1603.5 0 1603.5 63.9098 1603.5 63.9098 1603.5 63.9098 1603.5 63.9098 0 63.9098 0 63.9098 0 63.9098 0 63.9098 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="0" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
+        <PAGEOBJECT OwnPage="0" PTYPE="4" XPOS="139.5" YPOS="173.551378446115" WIDTH="1603.5" HEIGHT="96.448621553885" RADRECT="0" FRTYPE="0" CLIPEDIT="1" PWIDTH="1" PCOLOR="None" PCOLOR2="None" COLUMNS="1" COLGAP="0" NAMEDLST="" SHADE="100" SHADE2="100" GRTYP="0" ROT="0" PLINEART="1" PLINEEND="0" PLINEJOIN="0" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" PICART="1" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" FLIPPEDH="0" FLIPPEDV="0" SCALETYPE="1" RATIO="1" PRINTABLE="1" ANNOTATION="0" ANNAME="" TEXTFLOWMODE="0" TEXTFLOW="0" TEXTFLOW2="0" TEXTFLOW3="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" FLOP="0" PFILE="" PFILE2="" PFILE3="" PRFILE="" EPROF="" IRENDER="1" EMBEDDED="1" LOCK="0" LOCKR="0" REVERS="0" TransValue="0" TransValueS="0" TransBlend="0" TransBlendS="0" isTableItem="0" TopLine="0" LeftLine="0" RightLine="0" BottomLine="0" isGroupControl="0" NUMDASH="0" DASHS="" DASHOFF="0" NUMPO="16" POCOOR="0 0 0 0 1603.5 0 1603.5 0 1603.5 0 1603.5 0 1603.5 96.4486 1603.5 96.4486 1603.5 96.4486 1603.5 96.4486 0 96.4486 0 96.4486 0 96.4486 0 96.4486 0 0 0 0 " NUMCO="16" COCOOR="0 0 0 0 1603.5 0 1603.5 0 1603.5 0 1603.5 0 1603.5 96.4487 1603.5 96.4487 1603.5 96.4487 1603.5 96.4487 0 96.4487 0 96.4487 0 96.4487 0 96.4487 0 0 0 0 " NUMGROUP="0" GROUPS="" startArrowIndex="0" endArrowIndex="0" OnMasterPage="" ImageClip="" ImageRes="1" Pagenumber="0" isInline="0" fillRule="1" doOverprint="0" gXpos="0" gYpos="0" gWidth="0" gHeight="0" LAYER="0" BOOKMARK="0" NEXTITEM="-1" BACKITEM="-1">
             <ITEXT CH="1 Bolidozor, Czech Republic, romandvorak@mlab.cz"/>
             <para ALIGN="1"/>
             <ITEXT CH="2 Astronomical Institute of the CAS, Czech Republic, strobl@asu.cas.cz"/>
