@@ -15,7 +15,7 @@
    width="744.15002"
    height="1052.4"
    viewBox="0 0 744.15002 1052.4"
-   sodipodi:docname="design.svg">
+   sodipodi:docname="predniA.svg">
   <metadata
      id="metadata4142">
     <rdf:RDF>
@@ -24,7 +24,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -39,19 +39,20 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1280"
-     inkscape:window-height="752"
+     inkscape:window-width="1015"
+     inkscape:window-height="1896"
      id="namedview4138"
      showgrid="false"
-     inkscape:zoom="1.4781784"
-     inkscape:cx="388.81226"
-     inkscape:cy="560.48513"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:zoom="0.7390892"
+     inkscape:cx="469.26361"
+     inkscape:cy="538.19272"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg4136" />
   <g
-     id="g4304">
+     id="g4304"
+     transform="matrix(3.6693164,0,0,3.6693164,-656.27649,-1346.4685)">
     <g
        transform="translate(-21.648267,-6.765084)"
        id="g4231">
