@@ -97,7 +97,7 @@
             <para PARENT="nadpis-3"/>
             <ITEXT CH="space.astro.cz"/>
             <para PARENT="nadpis-3"/>
-            <ITEXT CH="Data on primary storage server are browsable with a file index web page or with javastript JS9 fits viewer.                                                                   "/>
+            <ITEXT CH="Data on primary storage server are browsable with a file index web page or with javascript JS9 fits viewer.                                                                   "/>
             <para PARENT="text"/>
             <ITEXT CH="Bolidozor RMOBmultigen"/>
             <para PARENT="nadpis-3"/>
@@ -109,7 +109,7 @@
             <para PARENT="text"/>
             <ITEXT CH="Freya"/>
             <para PARENT="nadpis-3"/>
-            <ITEXT CH="Freya is another python 3D visualisation software. Next to the video representation it generates sound in which is possible to hear meteors as whiste. Freya uses reduced data-stream, so it is suitable for permanent presentation (e.g. on observatories for visitors) or for streaming trought internet. It can be run on Linux OS as well as on Windows OS.                                                                                    "/>
+            <ITEXT CH="Freya is another python 3D visualization software. Next, to the video representation, it generates sound in which is possible to hear meteors as a whistle. Freya uses reduced data-stream, so it is suitable for permanent presentation (e.g., on observatories for visitors) or for streaming through the internet. It can be run on Linux OS as well as on Windows OS.                                                                                    "/>
             <trail PARENT="text"/>
             <PageItemAttributes/>
         </PAGEOBJECT>
@@ -157,7 +157,7 @@
             <ITEXT CH="Because most of the processing software we have written in python, we have prepared a python library for easy access to measured data on storage servers and MLABvo databases.                                       "/>
             <para PARENT="text"/>
             <para PARENT="text"/>
-            <ITEXT CH="Several processing scripts are prepaced in Jupyter python notebooks.             "/>
+            <ITEXT CH="Several processing scripts are prepared in Jupyter python notebooks.             "/>
             <para PARENT="text"/>
             <ITEXT CH="                                                                                                                           "/>
             <trail PARENT="text"/>
