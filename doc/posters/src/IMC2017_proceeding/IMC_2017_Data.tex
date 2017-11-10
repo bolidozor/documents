@@ -23,7 +23,7 @@
 						\texttt{\url{kakonjak@fel.cvut.cz}}\\        
         }}%
 
-\abstract{Stations of Bolidozor radio meteor detection network produce every day a lot of data. In this paper, we present the way how are measured data stored in detection stations and how they are transferred to the common data storage server. All data are indexed to the database before transmission which provides fast access and simple search of the requested data according to several parameters (e.g. time, station, duration or length). The system provides a user-friendly web interface for accessing data and machine-readable outputs for external processing tools. Data management system is ready for use with multiple storage servers or extend to virtual-observatory standards.}}% 
+\abstract{Stations of Bolidozor radio meteor detection network produce every day a lot of data. In this paper, we present the way how are measured data stored in detection stations and how they are transferred to the common data storage server. All data are indexed to the database before transmission which provides fast access and the simple search of the requested data according to several parameters (e.g., time, station, duration or length). The system provides a user-friendly web interface for accessing data and machine-readable outputs for external processing tools. Data management system is ready for use with multiple storage servers or extend to virtual-observatory standards.}}% 
 \vspace*{-3\baselineskip}
 
 \section{Introduction}
@@ -43,7 +43,7 @@ Each station produces approximately 2 GB of data per day on average. For data re
 CSV (comma separated values) files containing information about every generated file. In case of the RAW file (meteor detection), it includes properties as duration, peak frequency, radio-magnitude or noise level of background.                                             
 
 \subsection{Snapshots}
-A snapshot .FITS (flexible image transport system) images contain continual spectrogram of one minute per file with the narrow band of frequencies around Graves radar transmission frequency. In snapshots are included meteors that have not been detected. These files are used for determining the status of the station because in them is possible to see e.g. interference noise.                                                      
+A snapshot .FITS (flexible image transport system) images contain continual spectrogram of one minute per file with the narrow band of frequencies around Graves radar transmission frequency. In snapshots are included meteors that have not been detected. These files are used for determining the status of the station because in them is possible to see, e.g., interference noise.                                                      
 \begin{figure}[htb]
 \centering
 \epsfig{figure = snap.eps, width = \columnwidth}
@@ -53,7 +53,7 @@ A snapshot .FITS (flexible image transport system) images contain continual spec
 
 
 \subsection{RAW files}
-When the radio-observer software detects some meteor a RAW FITS file is created. This file contains unprocessed samples from an analog-digital converter. This file is intended for postprocessing. In additional is created preview FITS image (spectrogram) of the RAW file. 
+When the radio-observer software detects some meteor a RAW FITS file is created, the file contains unprocessed samples from an analog-digital converter. This file is intended for postprocessing. In additional is created preview FITS image (spectrogram) of the RAW file. 
 
 \begin{figure}[htb]
 \centering
@@ -76,9 +76,9 @@ Although the data are available from central storage server via HTTP web page, i
 
 Therefore stored data are indexed in MLABvo database. MLABvo API provides us simple access to data based on parameters such as station, type of data (snapshots, meteors, multibolids), event time, meteor duration, etc.                   
 
-MLABvo can also obtain and provide backed-up data from magnetic tapes. It is based on \textit{jobs model} where the client sends a query for data and gets a \textit{job-id}. Server required data collect and prepare them for fast access. When it has all the files collected, the server creates a json containing links and next information about each file (or event). Client download files from http links obtained by \textit{job-id}.
+MLABvo can also obtain and provide backed-up data from magnetic tapes. It is based on \textit{jobs model} where the client sends a query for data and gets a \textit{job-id}. Server required data collect and prepare them for fast access. When it has all the files collected, the server creates a JSON containing links and next information about each file (or event). Client download files from HTTP links obtained by \textit{job-id}.
 
-MLABvo database is designed as universal tool and is ready to manage data from other projects. Today, for example, it stores data from Ionozor network which makes a radio-ionosphere observation. Database is ready to expand with virtual-observatory standards by IVOA. 
+MLABvo database is designed as the universal tool and is ready to manage data from other projects. Today, for example, it stores data from Ionozor network which makes a radio-ionosphere observation. The database is prepared to expand with virtual-observatory standards by IVOA. 
 
 \subsection{Python access}
 Because most of the processing software we have written in python, we have prepared a python library for easy access to measured data on storage servers and MLABvo databases.                                       
@@ -92,7 +92,7 @@ Because viewing data in web index is not comfortable and for some users very dif
 RTbolidozor (rtbolidozor.astro.cz, Real-Time Bolidozor) is the web interface for simple visualization of measured data. RTbolidozor provides several types of outputs.
                                                 
 \subsubsection{Multicount}
-Multicount is colorgram like graph, which shows a count of detection per one period. It shows a number of detections per one time period from all stations in one chart. Each site has own position within the rectangle. The position of the station is visualized on gray square. Click on the station name displays the data only for the selected station (figure~\ref{RTBm}).
+Multicount is a graph, which shows a count of detection per one period. It shows some detections per one period from all stations in one chart. Each site has own position within the rectangle. The position of the station is visualized on gray square. Click on the station name displays the data only for the selected station (figure~\ref{RTBm}).
 
 \begin{figure}[htb]
 \centering
@@ -147,3 +147,4 @@ Freya is another python 3D visualization software. Next, to the video representa
 
 \end{IMCpaper}
 \end{document}
+
