@@ -1,0 +1,153 @@
+\documentclass[10pt,a4paper,twoside,dvips]{article}
+
+\usepackage{vmargin,fancyheadings,multicol,multirow,ifthen,cite,
+            epsfig,wrapfig,calc,dcolumn,apalike,setspace,
+            boxedminipage,rotating,textcomp,picinpar,longtable,
+            url,amsmath,amssymb} 
+\usepackage[tight]{subfigure}
+\usepackage{imc2017}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\begin{document}
+\SetPaperBodyFont
+
+\begin{IMCpaper}{
+\title{Data management system of the Bolidozor network}
+\author{Roman Dvořák$^1$, Jan Štrobl$^2$ and Jakub Kákona$^3$
+        \thanks{
+				$^1\,$ Bolidozor, Czech Republic,
+        				\texttt{\url{romandvorak@mlab.cz}}\\
+				$^2\,$ Astronomical Institute of the CAS, Czech Republic
+						\texttt{\url{strobl@asu.cas.cz}}\\
+				$^3\,$ CTU in Prague Czech Republic
+						\texttt{\url{kakonjak@fel.cvut.cz}}\\        
+        }}%
+
+\abstract{Stations of Bolidozor radio meteor detection network produce every day a lot of data. In this paper, we present the way how are measured data stored in detection stations and how they are transferred to the common data storage server. All data are indexed to the database before transmission which provides fast access and the simple search of the requested data according to several parameters (e.g., time, station, duration or length). The system provides a user-friendly web interface for accessing data and machine-readable outputs for external processing tools. Data management system is ready for use with multiple storage servers or extend to virtual-observatory standards.}}% 
+\vspace*{-3\baselineskip}
+
+\section{Introduction}
+Bolidozor is the network of meteor radio detection stations (figure~\ref{RMDS}), where each site produces a significant amount of data that must be stored on a shared storage for simple access for processing. This paper shows, how measured data are managed and stored in the Bolidozor network.  
+
+\begin{figure}[htb]
+\centering
+\epsfig{figure = RMDS.eps, width = \columnwidth}
+\caption{RMDS02E (Radio meteor detection station) assembled from MLAB modules.}%
+\label{RMDS}
+\end{figure}                                                 
+
+\section{Data outputs}
+Each station produces approximately 2 GB of data per day on average. For data recording stations use radio-observer software which provides several types of output data.                                                                             
+
+\subsection{Metadata}
+CSV (comma separated values) files containing information about every generated file. In case of the RAW file (meteor detection), it includes properties as duration, peak frequency, radio-magnitude or noise level of background.                                             
+
+\subsection{Snapshots}
+A snapshot .FITS (flexible image transport system) images contain continual spectrogram of one minute per file with the narrow band of frequencies around Graves radar transmission frequency. In snapshots are included meteors that have not been detected. These files are used for determining the status of the station because in them is possible to see, e.g., interference noise.                                                      
+\begin{figure}[htb]
+\centering
+\epsfig{figure = snap.eps, width = \columnwidth}
+\caption{Example of the snapshot. It is useful only for quick browsing by people.}%
+\label{snap}
+\end{figure}
+
+
+\subsection{RAW files}
+When the radio-observer software detects some meteor a RAW FITS file is created, the file contains unprocessed samples from an analog-digital converter. This file is intended for postprocessing. In additional is created preview FITS image (spectrogram) of the RAW file. 
+
+\begin{figure}[htb]
+\centering
+\epsfig{figure = mb.eps, width = \columnwidth}
+\caption{Radio-fireball with head-echo captured by multiple stations. Graphs are precisely aligned by GPS time marks from RAW files.}%
+\label{mb}
+\end{figure}
+
+\section{Data transmission}
+Measured data are immediately transferred to the central data storage server  (space.astro.cz) with data-uploader software which contains almost 7 TB of space for measured data. Because it is not enough for saving all historical data, old data are backed up to magnetic tapes of CESNET servers and deleted from space.astro.cz server.                                                                                 
+
+\section{Data streams}
+Station provides two types of UDP/IP data streams. These streams are possible to use with PySDR or Freya visualization software. The first data stream is uncompressed and contains all AD converter data. This stream is intended for debugging purposes. The second data stream includes compressed data and is suitable for visualization purposes.                                              
+
+\subsection{Meteor events}
+When a meteor is detected, the station makes TCP/IP request with some fundamental properties of the event. This stream is used for real-time visualization on the map.                                                                                        
+
+\section{Standardized data access}
+Although the data are available from central storage server via HTTP web page, it is not suitable for browsing and searching for required data programmatically. Moreover, old backed-up data are not accessible in real-time, and they must be requested from magnetic-tape storage. It can take several seconds or minutes.
+
+Therefore stored data are indexed in MLABvo database. MLABvo API provides us simple access to data based on parameters such as station, type of data (snapshots, meteors, multibolids), event time, meteor duration, etc.                   
+
+MLABvo can also obtain and provide backed-up data from magnetic tapes. It is based on \textit{jobs model} where the client sends a query for data and gets a \textit{job-id}. Server required data collect and prepare them for fast access. When it has all the files collected, the server creates a JSON containing links and next information about each file (or event). Client download files from HTTP links obtained by \textit{job-id}.
+
+MLABvo database is designed as the universal tool and is ready to manage data from other projects. Today, for example, it stores data from Ionozor network which makes a radio-ionosphere observation. The database is prepared to expand with virtual-observatory standards by IVOA. 
+
+\subsection{Python access}
+Because most of the processing software we have written in python, we have prepared a python library for easy access to measured data on storage servers and MLABvo databases.                                       
+
+Several processing scripts are prepared in python Jupyter notebooks.             
+
+\section{Visualisation tools}
+Because viewing data in web index is not comfortable and for some users very difficult. We have prepared some tools for simple browsing of measured data. 
+
+\subsection{RTbolidozor}
+RTbolidozor (rtbolidozor.astro.cz, Real-Time Bolidozor) is the web interface for simple visualization of measured data. RTbolidozor provides several types of outputs.
+                                                
+\subsubsection{Multicount}
+Multicount is a graph, which shows a count of detection per one period. It shows some detections per one period from all stations in one chart. Each site has own position within the rectangle. The position of the station is visualized on gray square. Click on the station name displays the data only for the selected station (figure~\ref{RTBm}).
+
+\begin{figure}[htb]
+\centering
+\epsfig{figure = rtbm.eps, width = \columnwidth}
+\caption{Multicount}%
+\label{RTBm}
+\end{figure}
+
+\subsubsection{Real-time map}
+The real-time map show radio-meteor detections in real-time on the map of stations. When some meteor is detected, source station blinks, and the sound is played. Next to the map is possible to see last detected meteors.
+\begin{figure}[!htb]
+\centering
+\epsfig{figure = rtbmap.eps, width = \columnwidth}
+\caption{Visualisation of meteor detections on the map of stations in real-time.}%
+\label{RTBmmap}
+\end{figure}
+
+\subsubsection{Multibolid}
+The multibolid part contains the list of multi-station bolids. The match is detected by the time of event and length of the record. Every multi-station event is marked with the unique id for simple access with MLABvo tools. It is useful for choosing interesting bolides for future processing. In web interface are links to easy access to the corresponding snapshots.
+
+
+\begin{figure}[htb]
+\centering
+\epsfig{figure = rtbb.eps, width = \columnwidth}
+\caption{List of multistation event}%
+\label{RTBb}
+\end{figure}
+
+\subsection{space.astro.cz}
+Data on primary storage server are browsable with a file index web page or with javascript JS9 fits viewer.                                                     
+
+\subsection{Bolidozor RMOBmultigen}
+RMOB histograms are generated centrally from data on the storage server (space.astro.cz) on processing server meteor1.astrozor. It provides us simple updates of the program and smaller detecting computers usage.                                                         
+
+
+\subsection{PySDR}
+PySDR is python software for live 2D waterfall display of measured data.                                                  
+\subsection{Freya}
+Freya is another python 3D visualization software. Next, to the video representation, it generates sound in which is possible to hear meteors as a whistle. Freya uses reduced data-stream, so it is suitable for permanent presentation (e.g., on observatories for visitors) or for streaming through the internet. It can be run on Linux OS as well as on Windows OS.                                                                                    
+
+\begin{figure}[htb]
+\centering
+\epsfig{figure = freya.eps, width = \columnwidth}
+\caption{Freya 3D waterfall.}%
+\label{RTBmmap}
+\end{figure}
+
+\section{Conclusion}
+Bolidozor radio meteor detection network produces a large amount of data which are automatically transferred to the shared data server. Therefore, we are developing a set of programs that take care of data transmission, simple access to them and visualizations.  
+
+                                                                                                                           
+\nocite{*}
+\bibliographystyle{imo2}
+\bibliography{data_bib.bib}
+
+\end{IMCpaper}
+\end{document}
+
