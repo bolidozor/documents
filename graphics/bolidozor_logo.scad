@@ -19,7 +19,7 @@ function max_x(shape_points) = max([ for (x = shape_points) max(x[0])]);
 function min_y(shape_points) = min([ for (x = shape_points) min(x[1])]);
 function max_y(shape_points) = max([ for (x = shape_points) max(x[1])]);
 
-height = 5;
+//Boheight = 3;
 width = 1.0;
 
 
@@ -140,14 +140,21 @@ module poly_path868(h, w, res=4)  {
   }
 }
 
-// The shapes
-poly_path3921(height, width);
-poly_path880(height, width);
-poly_path872(height, width);
-poly_path870(height, width);
-poly_path864(height, width);
-poly_path878(height, width);
-poly_path874(height, width);
-poly_path866(height, width);
-poly_path876(height, width);
-poly_path868(height, width);
+
+
+module bolidozor_logo(height = 5){    
+    // The shapes
+    poly_path3921(height, width);
+    poly_path880(height, width);
+    poly_path872(height, width);
+    poly_path870(height, width);
+    poly_path864(height, width);
+    poly_path878(height, width);
+    poly_path874(height, width);
+    poly_path866(height, width);
+    poly_path876(height, width);
+    poly_path868(height, width);
+}
+
+
+bolidozor_logo();
